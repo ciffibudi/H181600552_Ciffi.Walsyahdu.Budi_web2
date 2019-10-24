@@ -2,22 +2,20 @@
 
 @section('content')
 <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
                 <div class="card-header">Tambah Berita</div>
 
-                    <div class="card-body">
-                        <form method="post" action="{!! route('berita.store') !!}" >
-                            @include('berita.form')
-                        </form>
-
-
-                    </div>
+                <div class="card-body">
+                    {!! Form::open(['route' => 'berita.store', 'method' => 'post']) !!}
+                        @include('berita.form')
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
-</div>                
+    </div>
+</div>
 @endsection
 
 @section('scripts')
@@ -25,8 +23,8 @@
 
     <script>
         $(document).ready(function() {
-            CKEDITOR.replace('isi');
+            CKEDITOR.replace( 'isi' );
         });
     </script>
-
+   
 @endsection

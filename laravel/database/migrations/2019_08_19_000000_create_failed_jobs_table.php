@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateFailedJobsTable extends Migration
 {
@@ -17,8 +17,8 @@ class CreateFailedJobsTable extends Migration
             $table->bigIncrements('id');
             $table->text('connection');
             $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
+            $table->longtext('payload');
+            $table->longtext('exception');
             $table->timestamp('failed_at')->useCurrent();
         });
     }

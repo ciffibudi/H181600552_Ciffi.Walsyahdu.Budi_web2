@@ -2,22 +2,20 @@
 
 @section('content')
 <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
                 <div class="card-header">Tambah Galeri</div>
 
-                    <div class="card-body">
-                        <form method="post" action="{!! route('galeri.store') !!}" >
-                            @include('galeri.form')
-                        </form>
-
-
-                    </div>
+                <div class="card-body">
+                    {!! Form::open(['route' => 'galeri.store', 'method' => 'post']) !!}
+                        @include('galeri.form')
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
-</div>                
+    </div>
+</div>
 @endsection
 
 @section('scripts')
@@ -25,8 +23,8 @@
 
     <script>
         $(document).ready(function() {
-            CKEDITOR.replace('keterangan');
+            CKEDITOR.replace( 'keterangan' );
         });
     </script>
-
+   
 @endsection

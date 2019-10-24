@@ -8,15 +8,15 @@
                 <div class="card-header">Daftar Berita</div>
 
                 <div class="card-body">
-                <a href="{!! route('berita.create') !!}" class="btn btn-primary">TAMBAHKAN DATA</a>
+                    <a href="{!! route('berita.create') !!}" class="btn btn-success">Tambah Data</a>
                 <table border="1">
             <tr>
                 <td>ID</td>
                 <td>Judul</td>
                 <td>Isi</td>
-                <td>Kategori Id</td>
                 <td>User</td>
                 <td>Create</td>
+                <td>Update</td>
                 <td>Aksi</td>
             </tr>
 
@@ -26,11 +26,18 @@
                 <td>{!! $item->id !!}</td>
                 <td>{!! $item->judul !!}</td>
                 <td>{!! $item->isi !!}</td>
-                <td>{!! $item->kategori_berita_id !!}</td>
                 <td>{!! $item->users_id !!}</td>
                 <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>
                 <td>
-                    <a href="{!! route('berita.show',[$item->id]) !!}" class="btn btn-primary">Lihat BREE</a>
+                    <a href="{!! route('berita.show',[$item->id]) !!}" class="btn btn-primary">Lihat</a>
+                    <a href="{!! route('berita.edit',[$item->id]) !!}" class="btn btn-warning">Ubah</a>
+
+                {!! Form::open(['route' => ['berita.destroy', $item->id], 'method'=>'delete']) !!}
+
+                {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apa anda yakin untuk penghapusan?')"]) !!}
+
+                {!! Form::close() !!}
                 </td>
             </tr>
 
