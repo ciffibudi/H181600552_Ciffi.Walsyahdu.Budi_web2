@@ -30,12 +30,12 @@
 </div>
 
 <div class="form-group row">
-    <label for="keterangan" class="col-md-2 col-form-label text-md-right">{{ __('Keterangan') }}</label>
+    <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
 
     <div class="col-md-10">
-        {!! Form::textarea('keterangan', null,['class'=>'form-control']); !!}
+        {!! Form::file('path', null, ['class'=>'form-control']); !!}
 
-            @error('keterangan')
+            @error('path')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -44,12 +44,12 @@
 </div>
 
 <div class="form-group row">
-    <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
+    <label for="keterangan" class="col-md-2 col-form-label text-md-right">{{ __('Keterangan') }}</label>
 
     <div class="col-md-10">
-        <input id="path" type="text" class="form-control @error('path') is-invalid @enderror" name="path" value="{{ old('path') }}" required>
+        {!! Form::textarea('keterangan', null,['class'=>'form-control']); !!}
 
-            @error('path')
+            @error('keterangan')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

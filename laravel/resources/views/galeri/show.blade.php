@@ -20,13 +20,18 @@
                     </div>
 
                     <div class="form-group row">
+                    <label class="col-md-4 col-form-label text-md-right">Patch</label>
+                    <label class="col-md-8 col-form-label text-md-left">{!! $galeri->patch !!}</label>  
+                    </div>
+
+                    <div class="form-group row">
                     <label class="col-md-4 col-form-label text-md-right">Keterangan</label>
                     <label class="col-md-8 col-form-label text-md-left">{!! $galeri->keterangan !!}</label>  
                     </div>
 
                     <div class="form-group row">
-                    <label class="col-md-4 col-form-label text-md-right">Patch</label>
-                    <label class="col-md-8 col-form-label text-md-left">{!! $galeri->patch !!}</label>  
+                    <label class="col-md-4 col-form-label text-md-right">Kategori ID</label>
+                    <label class="col-md-8 col-form-label text-md-left">{!! $galeri->  !!}</label>  
                     </div>
 
                     <div class="form-group row">
